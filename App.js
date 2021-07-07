@@ -2,7 +2,7 @@ import React from 'react'
 import { View,Text,Button } from 'react-native'
 import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
-//import Profile from './Component/Profile'
+
 function App(props) {
   return (  
   <View> 
@@ -12,10 +12,11 @@ function App(props) {
 
   )
 }
-const Profile=()=>{
+const Profile=(props)=>{
   return(
     <View>
       <Text style={{fontSize:30}}>Profile Component</Text>
+      <Button title="go to Home" onPress={()=>{props.navigation.navigate("Home")}}/>  
     </View>
   )
 }

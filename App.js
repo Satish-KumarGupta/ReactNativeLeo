@@ -21,10 +21,11 @@ const Profile=(props)=>{
     <View>
       <Text style={{fontSize:30}}>
         {item.name}
-        Profile Component</Text>
+        Profile Component1</Text>
       <Button title="go to Home" onPress={()=>{props.navigation.navigate("Home")}}/>  
     </View>
   )
+
 }
 const AppNavigator=createStackNavigator({
   Home:App,

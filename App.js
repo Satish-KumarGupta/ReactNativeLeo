@@ -15,12 +15,14 @@ function App(props) {
   )
 }
 const Profile=(props)=>{
-  console.warn(props.navigation.getParam('data'))
+//  console.warn(props.navigation.state.param)
   const item=props.navigation.getParam('data')
   return(
     <View>
       <Text style={{fontSize:30}}>
-        {item.name}
+        {item.name+" "}
+        <br/>
+        {item.email+" "}
         Profile Component1</Text>
       <Button title="go to Home" onPress={()=>{props.navigation.navigate("Home")}}/>  
     </View>

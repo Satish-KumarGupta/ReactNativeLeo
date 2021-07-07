@@ -1,22 +1,23 @@
 1- firstly install react-navigaton librery
 2- install react-navigaton-stack library
 3- import createappcontainer object threw react-navigaton 
-import {createAppContainer} from 'react-navigation'
+    import {createAppContainer} from 'react-navigation'
 
 
 4- import createStackNavitor object threw react-navigaton-stack library
 
-import {createStackNavigator} from 'react-navigation-stack'
-
+    import {createStackNavigator} from 'react-navigation-stack'
 5- make a function name App and functional component Profile
 6- make appNavigator for Screening of pages
+    const AppNavigator=createStackNavigator({
+    Home:App,
+    Profile:Profile
+    });
 7- pass appNavigator to the createappcontainer
 
-const AppNavigator=createStackNavigator({
-  Home:App,
-  Profile:Profile
-});
-export default createAppContainer(AppNavigator);
+    export default createAppContainer(AppNavigator);
 
-8- make a button on both functional component to navigate screen onPress button event
-9-
+8- make a button on both functional component to navigate screen onPress button event with data 
+       <Button title="go to profile" onPress={()=>{props.navigation.navigate("Profile",{data})}}/>    
+
+9- 

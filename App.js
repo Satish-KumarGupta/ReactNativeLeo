@@ -1,9 +1,21 @@
 import React from 'react'
-import Home from './Component/Home'
+import { View,Text } from 'react-native'
+import {createAppContainer} from 'react-navigation'
+import {createStackNavigator} from 'react-navigation-stack'
 import Profile from './Component/Profile'
-export default function App() {
-  return (
-    <Profile />
- 
+function App() {
+  return (  
+  <View> 
+    <Text style={{fontsize:20}}>Props</Text>
+    <Profile data={"Satish kumar"} />
+  </View>
+
   )
 }
+
+const AppNavigator=createStackNavigator({
+  Home:{
+    screen: App,
+  }
+});
+export default createAppContainer(AppNavigator);

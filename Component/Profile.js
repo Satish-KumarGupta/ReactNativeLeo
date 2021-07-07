@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
-import { Text, View,Button } from 'react-native';
+import { Text, View } from 'react-native';
 
-const Profile=()=> {
+const Profile=(props)=> {
 
-   const [data,setData]=useState(0)
    return (
       <View>
-         <Text style={{fontSize:100}}>{data}</Text>
-         <Button onPress={()=>setData(10)}
-          title="Update State" />
+         <Text style={{fontSize:100}}>{props.data}</Text>
+
       </View>
 
    )

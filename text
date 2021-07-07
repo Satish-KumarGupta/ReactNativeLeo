@@ -21,3 +21,23 @@
        <Button title="go to profile" onPress={()=>{props.navigation.navigate("Profile",{data})}}/>    
 
 9- 
+
+/// tab navigation///////
+1- firstly install react-navigaton librery
+2- install react-navigaton-tabs library
+3- import createappcontainer object threw react-navigaton 
+    import {createAppContainer} from 'react-navigation'
+
+
+4- import createBottomTabNavitor object threw react-navigaton-tabs library
+
+    import {createBottomTabNavigator} from 'react-navigation-tabs'
+5- make a function name App and functional component Profile
+6- make appNavigator for Screening of pages
+    const AppNavigator=createBottomTabNavigator({
+    Home:App,
+    Profile:Profile
+    });
+7- pass appNavigator to the createappcontainer
+
+    export default createAppContainer(AppNavigator);

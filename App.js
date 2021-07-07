@@ -3,16 +3,15 @@ import { View,Text,Button } from 'react-native'
 import {createAppContainer} from 'react-navigation'
 import {createBottomTabNavigator} from 'react-navigation-tabs'
 
-import React, { Component } from 'react'
+import React from 'react'
 
- class App extends Component {
-  render() {
+ function App() {
     return (
       <View> 
       <Text style={{textAlign:"center",fontsize:30}}>Home navigation</Text>
       </View>
     )
-  }
+  
 }
 
 function Profile()

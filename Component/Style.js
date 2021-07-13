@@ -18,7 +18,7 @@ export default function Style() {
             borderWidth:3,
             borderColor:"red"
         }}>
-            <Text style={styles.text}>{name}</Text>
+            <Text style={styles.text,lists.listSize}>{name}</Text>
             <View style={styles.button}>
                 <Button title='update stat' onPress={onClickHandler}></Button>
             </View>
@@ -31,9 +31,7 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: 20,
     fontStyle: 'italic',
-    margin: 10,
-    textTransform:"upperCase",
-
+  
 },
 button:{
     width:150,
@@ -41,3 +39,11 @@ button:{
    
 },
 });
+const lists=StyleSheet.create({
+    listSize:{
+        margin: 10,
+        textTransform:"upperCase",
+    
+    }
+});
+const text=StyleSheet.compose(styles.text, lists.listSize);

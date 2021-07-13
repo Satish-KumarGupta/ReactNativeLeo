@@ -1,0 +1,15 @@
+the order of values does not effected it is render badsed on index.
+
+key should not be replicate it should be uniqe.
+
+when you pull down the list it will refesh so we use refersh control props .
+inside we define the refershControl component.
+
+by default refershcontrol value is false
+  const [Refreshing, setRefreshing] = useState(false);
+
+we add object to the end of the array to do this first copy the privious array with three . and
+then add the desired object to it.
+   setItems([...Items, { key: 69, item: 'Item 69' }]);
+
+colors is use for spiner color change and by default text color is black.

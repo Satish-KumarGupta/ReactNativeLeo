@@ -1,0 +1,14 @@
+1- useRef is use to initialize the value of fadeAnimation is 0 means disable mode.
+    const fadeAnimation = useRef(new Animated.Value(0)).current;
+2- we use the safeAreaView to bounderies the content in the body of safeAreaView meas a container.
+
+3-we are making two view in the container one for button and another for fading the content
+
+4- we create two buton fadein and fadeout
+5- onprss button we make an event function for performing the task of fading
+        const FadeOut=()=>{
+            Animated.timing(fadeAnimation,{
+                toValue: 0,
+                durations:3000
+            }).start();
+        };

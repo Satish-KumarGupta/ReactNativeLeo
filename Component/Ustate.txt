@@ -1,0 +1,14 @@
+*import useState from react
+
+*useState are the mutable type so we can change at run time(dynamically)
+
+    const [name , setname]=useState("initial value")
+
+*make a onClickHandler arrow function to setname value.
+
+    const onClickHandler = () => {
+        setName('Programming with Mash')
+    }
+*call function on button click event
+
+    <Button title='Update State' onPress={onClickHandler}></Button>

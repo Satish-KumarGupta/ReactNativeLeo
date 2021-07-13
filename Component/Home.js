@@ -1,63 +1,106 @@
-import React from 'react';
-import { Image,Dimensions,View,StyleSheet,Text} from 'react-native';
 
-
+import React,{useRef} from 'react'
+import {Text,Animated,View,Button,SafeAreaView,StyleSheet, Touchable, TouchableOpacity} from 'react-native'
+import { block } from 'react-native-reanimated';
+import { linear } from 'react-native/Libraries/Animated/src/Easing';
+import RNAnimatedBorder from "react-native-animated-border"
+import Blink from './Blink';
+borderWidth: Number;
+firstColor: String;
+secondColor: String;
+borderColor: String;
+padding: Number;
+margin: Number;
+elevation: Number;
 export default function Home() {
-    return (
-        <View style={{    background:"#009387",flex:1}}>
-            <View style={styles.header}>
-                <Image source={require("../assets/logo.png")} style={styles.logo} resizeMode="stretch"/>
-            </View>
-            <View style={styles.footer}>
-                <Text style={"styles.title"}>Stay connected with everyone!</Text>
-                <Text style={"styles.text"}> Sign in with account</Text>
-            </View>
-        </View>
-    )
+
+  const fadeAnimation = useRef(new Animated.Value(0)).current;
+
+const FadeOut=()=>{
+  Animated.timing(fadeAnimation,{
+    toValue: 0,
+    durations:3000
+  }).start();
+};
+
+const FadeIn=()=>{
+  Animated.timing(fadeAnimation,{
+    toValue: 1,
+    durations:5000
+  }).start();
+};
+
+  return (
+    <SafeAreaView style={styles.container}>
+  <TouchableOpacity>
+      <RNAnimatedBorder
+        firstColor="green"
+        secondColor="blue"
+        borderWidth={7}
+  
+
+       
+      >
+        <Button style={{
+        firstColor:"green",
+        borderWidth:7,
+        borderRadius:22,
+        elevation:8,
+        margin:5
+}}
+          onPress={() => console.log("I love RNAnimatedBorder!")}
+          title="press me"
+        />
+      </RNAnimatedBorder>
+    </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Animated.View  >
+        <Blink durations={100000} repeat_count={3}>    
+        
+        <Text style={[styles.fadingContainer,{opacity:fadeAnimation}]}>
+            fado
+        </Text>
+        </Blink>      
+
+        </Animated.View>
+        
+      </TouchableOpacity>
+      
+      <View style={styles.buttonRow}>
+        <Button title="Fade in " onPress={FadeIn} /> 
+        <Button title="fade out" onPress={FadeOut} />     
+    </View>
+
+    </SafeAreaView> 
+
+ )
 }
 
-const {height}=Dimensions.get("screen");
-//const height_logo = height*0.28;
+const styles=StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center"
 
-const styles = StyleSheet.create({
-    header:{
-        flex:3,
-        justifyContent:"center",
-        alignItems:"center",
-//        backgroundColor:"#009387",
-    },
-    footer:{
-        flex:1,
-        justifyContent:"center",
-        alignItems:"center",
-        backgroundColor:"#fff",
-        borderTopLeftRadius:30,
-        //PaddingVertical:50,
-        //PaddingHorizontal:30,
-        borderTopRightRadius:30,
-    },
-    logo:{
-        height:160,
-        width:160,
-        borderRedious:10,
-    },
-    tiltle:{
-        color:"#05375a",
-        fontSize: 30,
-        fontWeight: 'bold'
-    },
-    text:{
-        color: 'grey',
-      marginTop:5
-    },
-    button:{
+  },
+  fadingContainer: {
+    bottom:0,
+    right:-100,
+    padding: 20,
+    backgroundColor: "grey",
+    display:"inline-block",
+    borderWidth:15,
+    borderColor:"green",
+    position:"relative",
+    padding :"15,30",
+    "box-shadow":"0 0 10 #2196f3",
+    background:"linear-gradient(270deg,transparent,#2196f3)",
+  },
 
-    },
-    signIn:{
-
-    },
-    textSign:{
-
-    },
-    
+  buttonRow: {
+    flexBasis: 100,
+    justifyContent: "space-evenly",
+    marginVertical: 16
+  }
 });

@@ -42,7 +42,7 @@ button:{
 const lists=StyleSheet.create({
     listSize:{
         margin: 10,
-        textTransform:"upperCase",
+//        textTransform:"upperCase",
     
     }
 });

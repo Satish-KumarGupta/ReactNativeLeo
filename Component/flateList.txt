@@ -1,0 +1,8 @@
+renderItem props acts as a map and returns one by one the array item in function.
+
+in flate list key is chenged into string becouse flatelist only accepts the key as a string.
+
+if an array does not have key then we can do this by keyExtractor=>
+
+inside keyExtractor we define a function that retrns the item and index of the array
+which can use its index as a key 

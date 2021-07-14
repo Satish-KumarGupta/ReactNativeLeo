@@ -1,0 +1,20 @@
+** tuchableopacity:these components are not button but we can use them as buttons using styles.
+
+**activeopacity: it's value lia btween 0 to 1. Determines what the opacity of the wrapped view
+ should be when touch is active. 
+
+
+**TuchableHeighlight: similer to tuchableopacity exacapt that it can be display a custom color in the 
+background when clicked.
+
+**tuchableWithoutFeedback: it does't give feedback to the user when clicked.it also does't accept
+style but we can do styling by using a view inside it.
+
+**Pressable: if we give it button style it works similer to TouchableWithoutfeedback .
+this component always return a state called Pressed that notifies its click status.
+
+onLongPress={}
+delayLongPress ={}
+onClick={}
+
+hitSlop={} left,right,top,down focous a color.

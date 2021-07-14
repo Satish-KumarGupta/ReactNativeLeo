@@ -18,3 +18,16 @@ delayLongPress ={}
 onClick={}
 
 hitSlop={} left,right,top,down focous a color.
+
+
+the model component of react nativ actually display a page as a pop-up on the current page and we can 
+use any component within it.
+if we want to provide style in modal we use it insilde view to provide content
+
+if we want to display behind we use the transparent backgroundcolor is #000099
+
+android ripple give the user the feeling of the pressing the button
+
+animationtype ='slide' give the worning in slide way
+
+

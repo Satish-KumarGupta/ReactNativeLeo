@@ -7,6 +7,7 @@ import Style from './Component/Style'
 import T from './Component/T'
 import FlatList  from './Component/FlatList'
 import Button1  from './Component/Button1'
+import Alert1 from './Component/Alert1'
 export default function App() {
   return (
   <div> 
